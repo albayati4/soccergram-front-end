@@ -38,13 +38,13 @@ const App = () => {
       <Nav
         authenticated={authenticated}
         user={user}
-        handleLogOut={handleLogOut}s
+        handleLogOut={handleLogOut}
       />
       <main>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/register" element={<SignUp />} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:userId" element={<Profile />} />
           <Route path="/profile/:userId/friendsList" element={<FriendsList />} />
