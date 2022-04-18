@@ -1,4 +1,5 @@
 import './App.css';
+import Nav from './components/Nav'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
 import Home from './pages/Home'
@@ -34,14 +35,19 @@ const App = () => {
 
   return (
     <div className="App">
+      <Nav
+        authenticated={authenticated}
+        user={user}
+        handleLogOut={handleLogOut}s
+      />
       <main>
         <Routes>
-            <Route path = "/" element={<Landing />} />
-            <Route path = "/signin" element= {<SignIn />} />
-            <Route path = "/signup" element={<SignUp />} />
-            <Route path = "/home" element={<Home />} />
-            <Route path = "/profile/:userId" element={<Profile />} />
-            <Route path = "/profile/:userId/friendsList" element={<FriendsList />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/profile/:userId" element={<Profile />} />
+          <Route path="/profile/:userId/friendsList" element={<FriendsList />} />
         </Routes>
       </main>
     </div>
