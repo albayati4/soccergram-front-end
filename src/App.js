@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react'
 import Nav from './components/Nav'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
@@ -47,9 +48,11 @@ const App = () => {
             setUser={setUser}
             toggleAuthenticated={toggleAuthenticated} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/profile/:userId" element={<Profile />} />
-          <Route path="/profile/:userId/friendsList" element={<FriendsList />} />
+          <Route path="/home" element={<Home
+            user={user}
+            authenticated={authenticated} />} />
+          <Route path="/profile/:user_id" element={<Profile />} />
+          <Route path="/profile/:user_id/friendsList" element={<FriendsList />} />
         </Routes>
       </main>
     </div>

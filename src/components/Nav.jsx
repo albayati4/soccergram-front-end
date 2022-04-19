@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
@@ -7,6 +8,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <nav>
         <h3>Welcome {user.email}!</h3>
         <Link to = "/home"> Home </Link>
+        <Link to = "/profile"> My Profile </Link>
         <Link onClick = {handleLogOut} to="/">
           Sign Out
         </Link>
