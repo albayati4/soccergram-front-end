@@ -1,6 +1,6 @@
 import './App.css';
 import Nav from './components/Nav'
-import SignUp from './pages/SignUp'
+import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
@@ -43,8 +43,10 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/register" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn
+            setUser={setUser}
+            toggleAuthenticated={toggleAuthenticated} />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:userId" element={<Profile />} />
           <Route path="/profile/:userId/friendsList" element={<FriendsList />} />
