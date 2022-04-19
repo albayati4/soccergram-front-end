@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
-const SignUp = () => {
+const Register = () => {
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -19,12 +20,14 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      name: formValues.name,
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
       email: formValues.email,
       password: formValues.password
     })
     setFormValues({
-      name: '',
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -38,13 +41,24 @@ const SignUp = () => {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="firstName">First Name</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="firstName"
               type="text"
-              placeholder="John Smith"
-              value={formValues.name}
+              placeholder="John"
+              value={formValues.firstName}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              onChange={handleChange}
+              name="lastName"
+              type="text"
+              placeholder="Smith"
+              value={formValues.lastName}
               required
             />
           </div>
@@ -95,4 +109,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Register
