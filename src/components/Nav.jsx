@@ -6,7 +6,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   if (user) {
     authenticatedOptions = (
       <nav>
-        <h3>Welcome {user.email}!</h3>
+        <h3>Hi {user.email}!</h3>
         <Link to = "/home"> Home </Link>
         <Link to = "/profile"> My Profile </Link>
         <Link onClick = {handleLogOut} to="/">

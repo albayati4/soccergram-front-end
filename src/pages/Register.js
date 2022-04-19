@@ -97,6 +97,8 @@ const Register = () => {
           </div>
           <button
             disabled={
+              !formValues.firstName ||
+              !formValues.lastName ||
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
