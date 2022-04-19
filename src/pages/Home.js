@@ -22,9 +22,6 @@ const Home = ({ user, authenticated }) => {
         {posts.map((post) => (
           <div className="card" key={post.id}>
             <h3>{post.title}</h3>
-            <div>
-              <img src={post.image} alt="post" />
-            </div>
             <p>{post.body.substring(0, 80)}...</p>
           </div>
         ))}
