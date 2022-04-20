@@ -7,7 +7,7 @@ import { SignInUser } from '../services/Auth'
 const SignIn = (props) => {
     let navigate = useNavigate()
 
-    const [formValues, setFormValues] = useState({ email: '', password: '' })
+    const [formValues, setFormValues] = useState({ email: '', password: ''})
 
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -16,7 +16,8 @@ const SignIn = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const payload = await SignInUser(formValues)
-        setFormValues({ email: '', password: '' })
+        setFormValues({ email: '', password: ''})
+        localStorage.setItem('user', payload.id)
         props.setUser(payload)
         props.toggleAuthenticated(true)
         navigate('/home')
