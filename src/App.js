@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Landing from './pages/Landing'
 import FriendsList from './pages/FriendsList'
+import CreatePost from './pages/CreatePost'
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
 import { CheckSession } from './services/Auth'
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/home" element={<Home
             user={user}
             authenticated={authenticated} />} />
+          <Route path="/create_post" element={<CreatePost />}/>
           <Route path="/profile/:user_id" element={<Profile />} />
           <Route path="/profile/:user_id/friendsList" element={<FriendsList />} />
         </Routes>
