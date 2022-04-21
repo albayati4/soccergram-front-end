@@ -1,29 +1,35 @@
 import React from 'react'
+import axios from 'axios'
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-const CreatePost = () => {
+const CreateAPost = (props) => {
     let navigate = useNavigate()
+    const user_id = props.user.id
 
     const [formValues, setFormValues] = useState({
         title: '',
-        image: '',
-        body: ''
+        body: '',
+        user_id: user_id
     })
 
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
 
+    const CreatePost = async () => {
+        await axios({
+          url: `http://localhost:3001/api/post/${user_id}`,
+          method: 'post',
+          data: formValues
+        })
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await CreatePost({
-            title: '',
-            image: '',
-            body: ''
-        })
+        CreatePost()
         setFormValues({
             title: '',
-            image: '',
             body: ''
         })
         navigate('/home')
@@ -32,6 +38,7 @@ const CreatePost = () => {
 
     return (
         <div className="signin col">
+            <h1>Create a post page</h1>
             <div className="card-overlay centered">
                 <form className="col" onSubmit={handleSubmit}>
                     <div className="input-wrapper">
@@ -42,17 +49,6 @@ const CreatePost = () => {
                             type="text"
                             placeholder="Messi scores an impossible shot"
                             value={formValues.title}
-                            required
-                        />
-                    </div>
-                    <div className="input-wrapper">
-                        <label htmlFor="image">Image</label>
-                        <input
-                            onChange={handleChange}
-                            name="image"
-                            type="text"
-                            placeholder="Smith"
-                            value={formValues.image}
                             required
                         />
                     </div>
@@ -70,7 +66,6 @@ const CreatePost = () => {
                     <button
                         disabled={
                             !formValues.title ||
-                            !formValues.image ||
                             !formValues.body
                         }
                     >
@@ -82,4 +77,4 @@ const CreatePost = () => {
     )
 }
 
-export default CreatePost
+export default CreateAPost

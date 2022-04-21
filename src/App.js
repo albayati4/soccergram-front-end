@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Landing from './pages/Landing'
 import FriendsList from './pages/FriendsList'
-import CreatePost from './pages/CreatePost'
+import CreateAPost from './pages/CreateAPost'
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
 import { CheckSession } from './services/Auth'
@@ -20,6 +20,7 @@ const App = () => {
     const user = await CheckSession();
     setUser(user);
     toggleAuthenticated(true);
+    localStorage.clear();
   }
 
   const handleLogOut = () => {
@@ -52,8 +53,10 @@ const App = () => {
           <Route path="/home" element={<Home
             user={user}
             authenticated={authenticated} />} />
-          <Route path="/create_post" element={<CreatePost />}/>
-          <Route path="/profile/:user_id" element={<Profile />} />
+          <Route path="/create_post" element={<CreateAPost
+            user={user} />} />
+          <Route path="/profile" element={<Profile
+            user={user} />} />
           <Route path="/profile/:user_id/friendsList" element={<FriendsList />} />
         </Routes>
       </main>
