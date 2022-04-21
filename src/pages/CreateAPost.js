@@ -17,8 +17,9 @@ const CreateAPost = ({user}) => {
     }
 
     const CreatePost = async () => {
+        let url = process.env.NODE_ENV === 'production' ? `https://soccergram-back.herokuapp.com/post/${user_id}` : `http://localhost:3001/api/post/${user_id}`
         await axios({
-          url: `http://localhost:3001/api/post/${user_id}`,
+          url,
           method: 'post',
           data: formValues
         })

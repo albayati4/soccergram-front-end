@@ -54,9 +54,9 @@ const App = () => {
             authenticated={authenticated} />} />
           <Route path="/create_post" element={<CreateAPost
             user={user} />} />
-          {/* <Route path={`/profile/${user.id}`} element={<Profile
+          <Route path="/profile/:user_id" element={<Profile
             user={user} />} />
-          <Route path={`/profile/${user.id}/friendsList`} element={<FriendsList />} /> */}
+          <Route path="/profile/:user_id/friendsList" element={<FriendsList />} />
         </Routes>
       </main>
     </div>
