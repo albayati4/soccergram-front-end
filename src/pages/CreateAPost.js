@@ -3,14 +3,13 @@ import axios from 'axios'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-const CreateAPost = (props) => {
+const CreateAPost = ({user}) => {
     let navigate = useNavigate()
-    const user_id = props.user.id
+    const user_id = user.id
 
     const [formValues, setFormValues] = useState({
         title: '',
-        body: '',
-        user_id: user_id
+        body: ''
     })
 
     const handleChange = (e) => {
@@ -37,11 +36,11 @@ const CreateAPost = (props) => {
     }
 
     return (
-        <div className="signin col">
+        <div>
             <h1>Create a post page</h1>
-            <div className="card-overlay centered">
-                <form className="col" onSubmit={handleSubmit}>
-                    <div className="input-wrapper">
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div>
                         <label htmlFor="title">Title</label>
                         <input
                             onChange={handleChange}
@@ -52,7 +51,7 @@ const CreateAPost = (props) => {
                             required
                         />
                     </div>
-                    <div className="input-wrapper">
+                    <div>
                         <label htmlFor="body">Description</label>
                         <input
                             onChange={handleChange}

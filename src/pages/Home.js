@@ -1,4 +1,5 @@
 import React from 'react'
+import DeleteAPost from '../components/DeleteAPost'
 import { useEffect, useState } from 'react'
 import { GetPosts } from '../services/PostServices'
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +12,8 @@ const Home = ({ user, authenticated }) => {
     const handlePosts = async () => {
       const data = await GetPosts()
       setPosts(data)
+      console.log(data)
+      console.log(posts.user_id)
     }
     handlePosts()
   }, [])
@@ -18,11 +21,13 @@ const Home = ({ user, authenticated }) => {
   return (user && authenticated) ? (
     <div>
       <h1>This is the Home Page</h1>
-      <div className="grid col-4">
+      <div>
         {posts.map((post) => (
-          <div className="card" key={post.id}>
+          <div key={post.id}>
             <h3>{post.title}</h3>
-            <p>{post.body.substring(0, 80)}...</p>
+            <p>{post.body.substring(0, 80)}</p>
+            <p>{post.user_id}</p>
+            <DeleteAPost postId = {post.id} />
           </div>
         ))}
       </div>
