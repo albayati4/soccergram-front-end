@@ -21,19 +21,47 @@ const UpdateAPost = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        UpdatePost()
+        UpdatePost();
         navigate('/home')
     }
 
     return (
         <div>
-            <h2>Update Your post</h2>
-            <form onSubmit={handleSubmit}>
-                <input className="input" type="text" title="title" onChange={(e) => { setTitle(e.target.value) }} placeholder="Title" />
-                <input className="input" type="text" title="title" onChange={(e) => { setBody(e.target.value) }} placeholder="Body" />
-                <button>Submit</button>
-            </form>
-
+            <h1>Create a post page</h1>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="title">Title</label>
+                        <input
+                            onChange={handleChange}
+                            name="title"
+                            type="text"
+                            placeholder="Messi scores an impossible shot"
+                            value={formValues.title}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="body">Description</label>
+                        <input
+                            onChange={handleChange}
+                            name="body"
+                            type="text"
+                            placeholder="This goal was insane!"
+                            value={formValues.body}
+                            required
+                        />
+                    </div>
+                    <button
+                        disabled={
+                            !formValues.title ||
+                            !formValues.body
+                        }
+                    >
+                        Enter
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }
