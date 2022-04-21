@@ -20,7 +20,6 @@ const App = () => {
     const user = await CheckSession();
     setUser(user);
     toggleAuthenticated(true);
-    localStorage.clear();
   }
 
   const handleLogOut = () => {
