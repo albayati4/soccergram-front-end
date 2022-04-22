@@ -23,10 +23,9 @@ const Home = ({ user, authenticated }) => {
       <h1>This is the Home Page</h1>
       <div>
         {posts.map((post) => (
-          <div key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.body.substring(0, 80)}</p>
-            <p>{post.user_id}</p>
+          <div key={post.id} className='postContainer'>
+            <h3 className='postTitle'>{post.title}</h3>
+            <p className='postBody'>{post.body.substring(0, 80)}</p>
           </div>
         ))}
       </div>

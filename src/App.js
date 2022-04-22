@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css';
-import React from 'react'
 import Nav from './components/Nav'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
@@ -57,7 +56,7 @@ const App = () => {
             authenticated={authenticated} />} />
           <Route path="/create_post" element={<CreateAPost
             user={user} />} />
-          <Route path="/:post_id" element={<UpdateAPost/>}/>
+          <Route path="/:post_id" element={<UpdateAPost />} />
           <Route path="/profile/:user_id" element={<Profile
             user={user} />} />
           <Route path="/profile/:user_id/friendsList" element={<FriendsList />} />
