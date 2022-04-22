@@ -13,6 +13,9 @@
 #### ERD React link [HERE](https://drive.google.com/file/d/1_AJc_x5UaSoUaf5GGcFmWlFSG17DnZYY/view)
 #### ERD Server link [HERE](https://drive.google.com/file/d/1_AJc_x5UaSoUaf5GGcFmWlFSG17DnZYY/view)
 ***
+### *Getting Started*
+- fork and clone this and the [back end](https://github.com/lmao98/Soccergram-Back) repo
+- check the future updates section and help us with that.
 ### *Technologies*
 
 1. HTML, CSS
@@ -25,6 +28,7 @@
 - [ Allowing the user to delete their own profile ]
 - [ Allowing the user to insert a picture or a video in their post ] 
 - [ Styling the webpage]
+- [ Allowing the users to follow each other ]
 ***
 
 ### *Screenshots* 
