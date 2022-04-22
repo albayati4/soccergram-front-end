@@ -1,14 +1,17 @@
 import React from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const DeleteAPost = (props) => {
+    let navigate = useNavigate()
 
-    const deletePost = async () => {
+    const DeletePost = async () => {
         await axios.delete(`http://localhost:3001/api/post/${props.postId}`);
     }
 
     const handleDelete = () => {
-        deletePost();
+        DeletePost();
+        navigate('/home');
         window.location.reload(false)
     }
 

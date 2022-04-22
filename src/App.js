@@ -11,6 +11,7 @@ import CreateAPost from './pages/CreateAPost'
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
 import { CheckSession } from './services/Auth'
+import UpdateAPost from './pages/UpdateAPost';
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -54,6 +55,7 @@ const App = () => {
             authenticated={authenticated} />} />
           <Route path="/create_post" element={<CreateAPost
             user={user} />} />
+          <Route path="/:post_id" element={<UpdateAPost/>}/>
           <Route path="/profile/:user_id" element={<Profile
             user={user} />} />
           <Route path="/profile/:user_id/friendsList" element={<FriendsList />} />

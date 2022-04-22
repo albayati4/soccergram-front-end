@@ -33,7 +33,7 @@ const CreateAPost = ({user}) => {
             body: ''
         })
         navigate('/home')
-
+        window.location.reload(false)
     }
 
     return (

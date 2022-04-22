@@ -27,7 +27,6 @@ const Home = ({ user, authenticated }) => {
             <h3>{post.title}</h3>
             <p>{post.body.substring(0, 80)}</p>
             <p>{post.user_id}</p>
-            <DeleteAPost postId = {post.id} />
           </div>
         ))}
       </div>
