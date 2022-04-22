@@ -28,7 +28,7 @@ const Profile = ({ user }) => {
           <p>{post.body.substring(0, 80)}</p>
           <p>{post.user_id}</p>
           <DeleteAPost postId={post.id} />
-          <Link to={`/${post.id}`} state={{id:post.id}}><button> Update Post </button></Link>
+          <Link to={`/${post.id}`} state={{ id: post.id }}><button> Update Post </button></Link>
         </div>
       ))}
       <section>

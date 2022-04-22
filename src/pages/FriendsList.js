@@ -5,7 +5,7 @@ const Friendslist = () => {
 
   return (
     <div>
-        <h1>This is the friendslist page</h1>
+      <h1>This is the friendslist page</h1>
       <section>
       </section>
     </div>
