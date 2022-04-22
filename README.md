@@ -15,6 +15,7 @@
 ***
 ### *Getting Started*
 - fork and clone this and the [back end](https://github.com/lmao98/Soccergram-Back) repo
+- create your own branch
 - check the future updates section and help us with that.
 ### *Technologies*
 
