@@ -10,7 +10,7 @@ const Profile = ({ user }) => {
   const location = useLocation()
 
   useEffect(() => {
-    let url = process.env.NODE_ENV === 'production' ? `https://soccergram-back.herokuapp.com/api/post/${user_id}` : `http://localhost:3001/api/post/${user_id}`
+    let url = process.env.NODE_ENV === 'local' ? `http://localhost:3001/api/post/${user_id}` : `https://soccergram-back.herokuapp.com/api/post/${user_id}`
     const GetUserPosts = async () => {
       const info = await axios.get(url)
       setPosts(info.data)

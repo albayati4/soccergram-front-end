@@ -6,7 +6,8 @@ const DeleteAPost = (props) => {
     let navigate = useNavigate()
 
     const DeletePost = async () => {
-        await axios.delete(`http://localhost:3001/api/post/${props.postId}`);
+        let url = process.env.NODE_ENV === 'local' ? `http://localhost:3001/api/post/${props.postId}` : `https://soccergram-back.herokuapp.com/api/post/${props.postId}`
+        await axios.delete(url);
     }
 
     const handleDelete = () => {

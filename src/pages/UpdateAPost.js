@@ -13,7 +13,7 @@ const UpdateAPost = (props) => {
     console.log(props)
 
     const UpdatePost = async () => {
-        let url = process.env.NODE_ENV === 'production' ? `https://soccergram-back.herokuapp.com/api/post/${id}` : `http://localhost:3001/api/post/${id}`
+        let url = process.env.NODE_ENV === 'local' ? `http://localhost:3001/api/post/${id}` : `https://soccergram-back.herokuapp.com/api/post/${id}`
         await axios.put(url, {
             title: title,
             body: body
