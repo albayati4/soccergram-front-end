@@ -36,7 +36,7 @@
 
 ### *Screenshots* 
 
-![Image](https://i.ibb.co/ysBhYwB/Screen-Shot-2022-04-22-at-9-11-12-AM.png)
+![Image](https://i.ibb.co/SPt6gVW/Screen-Shot-2022-04-22-at-2-11-41-PM.png)
 
 ### *Credits*
 #### Syntax help [StackOverFlow](https://stackoverflow.com/)
