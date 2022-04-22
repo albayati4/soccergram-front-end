@@ -24,6 +24,7 @@
 ***
 - [ Allowing the user to delete their own profile ]
 - [ Allowing the user to insert a picture or a video in their post ] 
+- [ Styling the webpage]
 ***
 
 ### *Screenshots* 
