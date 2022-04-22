@@ -16,6 +16,7 @@ import UpdateAPost from './pages/UpdateAPost';
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  console.log(process.env.NODE_ENV, 'Node Environment')
 
   const checkToken = async () => {
     const user = await CheckSession();
